@@ -37,6 +37,9 @@ namespace CardDeck
             this.collectButton = new System.Windows.Forms.Button();
             this.dealerLabel = new System.Windows.Forms.Label();
             this.playerLabel = new System.Windows.Forms.Label();
+            this.availableBox = new System.Windows.Forms.GroupBox();
+            this.showLabel = new System.Windows.Forms.Label();
+            this.availableBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // shuffleButton
@@ -46,7 +49,7 @@ namespace CardDeck
             this.shuffleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shuffleButton.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shuffleButton.ForeColor = System.Drawing.Color.Black;
-            this.shuffleButton.Location = new System.Drawing.Point(12, 12);
+            this.shuffleButton.Location = new System.Drawing.Point(24, 12);
             this.shuffleButton.Name = "shuffleButton";
             this.shuffleButton.Size = new System.Drawing.Size(89, 47);
             this.shuffleButton.TabIndex = 0;
@@ -61,7 +64,7 @@ namespace CardDeck
             this.dealButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dealButton.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dealButton.ForeColor = System.Drawing.Color.Black;
-            this.dealButton.Location = new System.Drawing.Point(12, 65);
+            this.dealButton.Location = new System.Drawing.Point(24, 65);
             this.dealButton.Name = "dealButton";
             this.dealButton.Size = new System.Drawing.Size(89, 47);
             this.dealButton.TabIndex = 1;
@@ -98,7 +101,7 @@ namespace CardDeck
             this.collectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.collectButton.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.collectButton.ForeColor = System.Drawing.Color.Black;
-            this.collectButton.Location = new System.Drawing.Point(12, 118);
+            this.collectButton.Location = new System.Drawing.Point(24, 118);
             this.collectButton.Name = "collectButton";
             this.collectButton.Size = new System.Drawing.Size(89, 47);
             this.collectButton.TabIndex = 4;
@@ -128,12 +131,34 @@ namespace CardDeck
             this.playerLabel.TabIndex = 10;
             this.playerLabel.Text = "Player Cards:";
             // 
+            // availableBox
+            // 
+            this.availableBox.Controls.Add(this.showLabel);
+            this.availableBox.ForeColor = System.Drawing.Color.White;
+            this.availableBox.Location = new System.Drawing.Point(12, 185);
+            this.availableBox.Name = "availableBox";
+            this.availableBox.Size = new System.Drawing.Size(424, 108);
+            this.availableBox.TabIndex = 12;
+            this.availableBox.TabStop = false;
+            this.availableBox.Text = "Available Current Cards in Main Deck";
+            // 
+            // showLabel
+            // 
+            this.showLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showLabel.ForeColor = System.Drawing.Color.White;
+            this.showLabel.Location = new System.Drawing.Point(12, 24);
+            this.showLabel.Name = "showLabel";
+            this.showLabel.Size = new System.Drawing.Size(396, 67);
+            this.showLabel.TabIndex = 6;
+            this.showLabel.Text = "--";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(460, 180);
+            this.ClientSize = new System.Drawing.Size(451, 313);
+            this.Controls.Add(this.availableBox);
             this.Controls.Add(this.playerLabel);
             this.Controls.Add(this.dealerLabel);
             this.Controls.Add(this.collectButton);
@@ -145,6 +170,7 @@ namespace CardDeck
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deck of Cards";
+            this.availableBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +185,8 @@ namespace CardDeck
         private System.Windows.Forms.Button collectButton;
         private System.Windows.Forms.Label dealerLabel;
         private System.Windows.Forms.Label playerLabel;
+        private System.Windows.Forms.GroupBox availableBox;
+        private System.Windows.Forms.Label showLabel;
     }
 }
 
